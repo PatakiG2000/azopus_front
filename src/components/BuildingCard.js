@@ -1,4 +1,11 @@
 import { useState } from "react";
+import {
+  FaCalendarAlt,
+  FaTag,
+  FaEye,
+  FaShapes,
+  FaFingerprint,
+} from "react-icons/fa";
 
 const BuildingCard = ({ name, workId, dateOfCreation, type, visibleName }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -19,11 +26,45 @@ const BuildingCard = ({ name, workId, dateOfCreation, type, visibleName }) => {
         />
       </div>
       <div className="flex flex-col justify-between flex-grow text-primary">
-        <p className="text-xl font-semibold ">{dateOfCreation}</p>
-        <p className="text-lg">{name}</p>
-        <p>{visibleName}</p>
-        <p>{type}</p>
-        <p>{workId}</p>
+        <div className="flex items-center">
+          <FaCalendarAlt
+            className={"text-gray-500 text-lg mr-3 shrink-0"}
+            aria-hidden="true"
+          />
+          <p className="text-xl font-semibold">{dateOfCreation}</p>
+        </div>
+
+        <div className="flex items-center">
+          <FaTag
+            className={"text-gray-500 text-lg mr-3 shrink-0"}
+            aria-hidden="true"
+          />
+          <p className="text-lg">{name}</p>
+        </div>
+
+        <div className="flex items-center">
+          <FaEye
+            className={"text-gray-500 text-lg mr-3 shrink-0"}
+            aria-hidden="true"
+          />
+          <p>{visibleName}</p>
+        </div>
+
+        <div className="flex items-center">
+          <FaShapes
+            className={"text-gray-500 text-lg mr-3 shrink-0"}
+            aria-hidden="true"
+          />
+          <p>{type}</p>
+        </div>
+
+        <div className="flex items-center">
+          <FaFingerprint
+            className={"text-gray-500 text-lg mr-3 shrink-0"}
+            aria-hidden="true"
+          />
+          <p>{workId}</p>
+        </div>
       </div>
     </div>
   );
